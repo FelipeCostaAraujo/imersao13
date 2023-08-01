@@ -48,6 +48,16 @@ $ cd go
 $ docker-compose up -d
 $ go run cmd/trade/main.go
 ```
+### Kafka
+```bash
+$ cd kafka
+$ docker-compose up -d
+```
+### MongoDB
+```bash
+$ cd mongodb
+$ docker-compose up -d
+```
 ### NestJS
 ```bash
 $ cd nestjs
