@@ -34,7 +34,8 @@ export default function DefaultNavbar() {
         </Navbar.Link>
         <Navbar.Link href="#">Ativos</Navbar.Link>
       </Navbar.Collapse>
-      <div className="flex md:order-2 text-white">Olá {params.wallet_id}</div>
+      {/* <div className="flex md:order-2 text-white">Olá {params.wallet_id}</div> */}
+      <div className="flex md:order-2 text-white">Olá Felipe Araujo</div>
     </Navbar>
   );
 }

@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  
+  mongodb:
+    container_name: mongodb
+    image: bitnami/mongodb:5.0.17
+    environment:
+      MONGODB_ROOT_PASSWORD: root
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_KEY: 123456
+      MONGODB_DATABASE: nest  
+    volumes:
+      - data:/bitnami/mongodb
+      #- mongodb_data:/data/db    
+    ports:
+      - 27017:27017
+    networks:
+      - my-network
+
+volumes:
+  data:
+    driver: local
+          
+networks:
+  my-network:
+    external: true
+
+# //Linux ou Mac
+# /etc/hosts
+
+# 127.0.0.1 host.docker.internal
+
+# //Windows
+# C:\Windows\system32\drivers\etc\hosts (bloco de notas como administrador)
+# 127.0.0.1 host.docker.internal
+
+
+
+# docker compose up -d --no-deps --build
+# docker compose down --rmi all
+# docker-compose up --force-recreate -d
+
