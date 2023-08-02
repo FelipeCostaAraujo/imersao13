@@ -11,8 +11,8 @@ services:
       MONGODB_REPLICA_SET_KEY: 123456
       MONGODB_DATABASE: nest  
     volumes:
-      - data:/bitnami/mongodb
-      #- mongodb_data:/data/db    
+      #- data:/bitnami/mongodb
+      - data:/data/mongodb    
     ports:
       - 27017:27017
     networks:
@@ -25,6 +25,25 @@ volumes:
 networks:
   my-network:
     external: true
+
+# db:
+#     image: bitnami/mongodb:5.0.17
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - mongodb_data:/data/db    
+#     environment:
+#       MONGODB_ROOT_PASSWORD: root
+#       MONGODB_REPLICA_SET_MODE: primary
+#       MONGODB_REPLICA_SET_KEY: 123456
+#       MONGODB_DATABASE: nest
+# volumes:
+#   mongodb_data:
+#     driver: local
+
+# networks:
+#   my-network:
+#     external: true
 
 # //Linux ou Mac
 # /etc/hosts
@@ -40,4 +59,5 @@ networks:
 # docker compose up -d --no-deps --build
 # docker compose down --rmi all
 # docker-compose up --force-recreate -d
+
 
